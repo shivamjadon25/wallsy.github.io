@@ -1,21 +1,16 @@
-$(".menu > ul > li").click(function(e){
-    $(this).siblings().removeClass("active");
-    $(this).toggleClass("active");
-    $(this).find("ul").slideToggle();
-    $(this).siblings().find("ul").slideUp();
-    $(this).siblings().find("ul").find("li").removeClass("active");
-})
-
-$(".menu-btn").click(function(){
-    $(".sidebar").toggleClass("active")
-})
 
 
-async function getText() {
+const inputField = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+const backgroundText = document.getElementById('main')
+
+async function getImages(name) {
     var API_KEY = '38873802-e8cf77bad2ca19d222d725dcd';
-    var URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent('actors');
+    backgroundText.style.display = "none"
+    var URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(`${name}`);
     let result = await fetch(URL);
     let data = await result.json();
+
     let container = document.querySelector(".main")
     for (var i = 0; i < data.totalHits; i++) {
     container.innerHTML += 
@@ -26,8 +21,15 @@ async function getText() {
                     <img src=${data.hits[i].largeImageURL}>
                     </div>
                     <div class="content">
-                      <p class="heading">Card Hover</p>
+                      <h3>
+                      Uploaded By: ${data.hits[i].user}
+                      </h3>
+                      <p>Downloads: ${data.hits[i].downloads}</p>
                       <p>
+                      Views: ${data.hits[i].views}
+                      </p>
+                      <p>
+                      Likes: ${data.hits[i].likes}
                       </p>
                     </div>
                   </div>
@@ -35,4 +37,28 @@ async function getText() {
     `;
   }
   }
-  getText()
+  
+  inputField.addEventListener("keydown", async function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        const searchText = inputField.value;
+        try {
+            const weatherData = await getImages(searchText);
+
+        } catch (error) {
+            console.error("Error fetching weather data:", error);
+        }
+    }
+});
+searchButton.addEventListener('click', async function(event) {
+      event.preventDefault();
+      const searchText = inputField.value;
+      try {
+          const weatherData = await getImages(searchText);
+
+      } catch (error) {
+          console.error("Error fetching weather data:", error);
+      }
+  
+})
+

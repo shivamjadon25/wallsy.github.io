@@ -4,114 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
     <!-- ICONS -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="style.css" />
 
-    <title>Sidebar</title>
+    <title>Wallsy</title>
   </head>
   <body>
     <div class="container">
-        <div class="sidebar">
-            <div class="head">
-                <div class="user-img">
-                    <img src="profile_img.ico" alt="">
-                </div>
-                <div class="user-details">
-                    <p class="title">
-                        Hello,
-                    </p>
-                    <p class="name">Shivam Jadon</p>
-                </div>
-            </div>
-            <div class="nav">
-                <div class="menu">
-                    <p class="title">Main</p>
-                    <ul>
-                        <li class="active">
-                            <a href="#">
-                                <i class="icon ph-bold ph-house-simple"></i>
-                                <span class="text">Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon ph-bold ph-globe-simple"></i>
-                                <span class="text">International</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon ph-bold ph-buildings"></i>
-                                <span class="text">Business</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon ph-bold ph-film-slate"></i>
-                                <span class="text">Entertainment</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon ph-bold ph-basketball"></i>
-                                <span class="text">Sports</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon ph-bold ph-heartbeat"></i>
-                                <span class="text">Health</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="menu">
-                    <p class="title">Settings</p>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="icon ph-bold ph-gear"></i>
-                                <span class="text">Settings</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="menu">
-                    <p class="title">Account</p>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="icon ph-bold ph-info"></i>
-                                <span class="text">Help</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon ph-bold ph-sign-out"></i>
-                                <span class="text">Logout</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="rightbar">
             <div class="head">
+                <div class="logo">
+                    <span><img src="image.png" width="60" height="60"></img></span><span id="logoName">Wallsy</span>
+                </div>
                 <div class="search">
-                    <input placeholder="Search..." type="text">
-                    <button type="submit">Go</button>
+                    <input placeholder="Search..." type="text" id="searchInput">
+                    <button type="submit" id="searchButton">Go</button>
                   </div>
             </div>
-            <div class="main">
+            <div class="main" >
+                <div id="main">Search for wallpapers</div>
+                
             </div>
-            <div>
-            <nav class="pagination-container">
-
-                <div id="pagination-numbers">
-                </div>
-              </nav></div>
         </div>
     </div>
     <script
