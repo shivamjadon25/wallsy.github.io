@@ -8,9 +8,8 @@
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
 }
-
 body{
-    background-color: #eef1f4;
+    background-color: #ffffff;
 }
 .container{
     width: 100%;
@@ -38,15 +37,18 @@ body{
     padding-bottom: 20px;
     border-bottom: 1px solid #ebe9e9;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .search {
     position: relative;
+    display: flex;
+    left: 35%;
   }
   
   .search input[type="text"] {
-    width: 500px;
+    width: 100%;
+    min-width: 400px;
     padding: 10px;
     height: 50px;
     border: none;
@@ -55,7 +57,7 @@ body{
   }
   
   .search button[type="submit"] {
-    background-color: #4e99e9;
+    background-color: rgb(160, 104, 0);
     border: none;
     color: #fff;
     height: 50px;
@@ -191,7 +193,109 @@ body{
     font-weight: bold;
   }
 
-
-
+  .rightbar .head .list {
+   display: flex;
+   flex-direction: column;
+   justify-content:center;
+   align-items: center;
+  }
+  .rightbar .head .list ul{
+    display: flex;
+    list-style: none;
+  }
+  .rightbar .head .list ul li{
+    padding: 0 20px 10px 20px;
+  }
+  .rightbar .head .list ul li button {
+    background-color: #ffffff;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    height: 30px;
+    width: 100%;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    position: relative;
+    transition: .9s ease;
+  }
   
-  
+  .rightbar .head .list ul li button:hover {
+    transform: scale(1.1);
+    color: rgb(255, 255, 255);
+    background-color: rgb(160, 104, 0);
+  }
+
+  .rightbar .head .list ul li button.active {
+    background-color: rgb(160, 104, 0); /* Change this to your desired background color */
+    color: #fff; /* Change this to your desired text color */
+    /* Add any other styles you want for the active state */
+  }
+
+  #pagination {
+    margin-top: 20px;
+    margin-bottom: -20px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#pagination button {
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 25px;
+    transition: background-color 0.9s ease, color 0.9s ease;
+}
+
+#pagination button:hover {
+  transform: scale(1.1);
+  color: rgb(255, 255, 255);
+  background-color: rgb(160, 104, 0);
+}
+#pagination button.active {
+    font-weight: bold;
+    background-color:  rgb(160, 104, 0);
+    color: white;
+}
+
+#pagination .page-info {
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjust styles for mobile view here */
+  .rightbar .head{
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #ebe9e9;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+  .search {
+      position:relative;
+      width: 100%; /* Make the search bar full-width for mobile view */
+      right: -100; /* Center the search bar for mobile view */
+      top: auto; /* Reset the top position for mobile view */
+  }
+  .rightbar .head .list {
+    position:relative;
+    top:110px;
+    left:74px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+   }
+   #pagination{
+    margin-top:40px;
+    margin-bottom:-20px;
+   }
+}

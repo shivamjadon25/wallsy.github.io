@@ -15,21 +15,30 @@
   </head>
   <body>
     <div class="container">
-        <div class="rightbar">
-            <div class="head">
-                <div class="logo">
-                    <span><img src="image.png" width="60" height="60"></img></span><span id="logoName">Wallsy</span>
-                </div>
-                <div class="search">
-                    <input placeholder="Search..." type="text" id="searchInput">
-                    <button type="submit" id="searchButton">Go</button>
-                  </div>
-            </div>
-            <div class="main" >
-                <div id="main">Search for wallpapers</div>
-                
-            </div>
+      <div class="rightbar">
+        <div class="head">
+          <div class="logo">
+            <span><img src="image.png" width="60" height="60"></img></span><span id="logoName">Wallsy</span>
+          </div>
+          <div class="search">
+            <input placeholder="Search..." type="text" id="searchInput">
+            <button type="submit" id="searchButton">Go</button>
+          </div>
+          <div class="list">
+            <ul>
+              <li><button id="allButton" class="active" type="submit">All</button></li>
+              <li><button id="popularButton" type="submit">Popular</button></li>
+              <li><button id="newButton" type="submit">New</button></li>
+            </ul>
+          </div>
         </div>
+        <div id="pagination"></div>
+        <div class="main">
+          <div id="main">Search for wallpapers</div>
+          <div class="loader" id="loader"></div>
+        </div>
+        
+      </div>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
